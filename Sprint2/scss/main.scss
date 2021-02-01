@@ -1,0 +1,493 @@
+$primary-color: #323232;
+$secondary-color: #fff;
+$third-colour: #afafaf;
+$fourth-colour: #e1e1e1;
+$photo-gallery-bg: #fafafa;
+
+@font-face {
+  font-family: 'Avenir Next';
+  src: url('../fonts/AvenirNextLTPro-Regular.woff2') format('woff2'),
+    url('../fonts/AvenirNextLTPro-Regular.woff') format('woff');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Avenir Next';
+  src: url('../fonts/AvenirNextLTPro-Bold.woff2') format('woff2'),
+    url('../fonts/AvenirNextLTPro-Bold.woff') format('woff');
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Avenir Next';
+  src: url('../fonts/AvenirNextLTPro-Demi.woff2') format('woff2'),
+    url('../fonts/AvenirNextLTPro-Demi.woff') format('woff');
+  font-style: normal;
+  font-weight: demi;
+}
+
+@font-face {
+  font-family: 'Avenir Next';
+  src: url('../fonts/AvenirNextLTPro-Medium.woff2') format('woff2'),
+    url('../fonts/AvenirNextLTPro-Medium.woff') format('woff');
+  font-style: normal;
+  font-weight: medium;
+}
+
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+// @font-face {
+//   font-family: 'Avenir Next';
+//   src: url('../fonts/AvenirNextLTPro-Thin.woff2') format('woff2'),
+//     url('../fonts/AvenirNextLTPro-Medium.woff') format('woff');
+//   font-style: normal;
+//   font-weight: thin;
+// }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Avenir Next';
+}
+
+.header {
+  &__nav {
+    background-color: $primary-color;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+    @include tablet {
+      flex-direction: row;
+      padding: 1.15rem 2rem;
+      align-items: center;
+    }
+  }
+  &__logo {
+    text-align: center;
+    margin-top: 1rem;
+    @include laptop {
+      margin-left: 7rem;
+    }
+  }
+
+  &__logo-img {
+    width: 8rem;
+  }
+  &__list {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+    @include tablet {
+      margin-left: 3rem;
+    }
+  }
+  &__item {
+    font-size: 1rem;
+  }
+  &__link {
+    color: $secondary-color;
+    text-decoration: none;
+    padding: 0 2.67rem 0.8rem;
+    margin-right: 0.8rem;
+    @include tablet {
+      padding: 0 0.5rem 1.15rem;
+    }
+  }
+  &__link--active {
+    border-bottom: 5px solid $secondary-color;
+  }
+}
+
+.hero {
+  height: 12rem;
+  width: 100%;
+  background-image: url('../Assets/Images/band-1.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  @include tablet {
+    height: 22rem;
+  }
+  @include laptop {
+    height: 37rem;
+  }
+  &__title {
+    color: $secondary-color;
+    font-size: 1.5rem;
+    width: 14rem;
+    margin-left: 1rem;
+    @include tablet {
+      font-size: 3.2rem;
+      width: 30rem;
+      margin-left: 1.5rem;
+    }
+    @include laptop {
+      font-size: 3.5rem;
+      margin-bottom: 5rem;
+      margin-left: 8.5rem;
+    }
+  }
+}
+
+.description {
+  &__title {
+    font-size: 1.5rem;
+    margin-top: 0.45rem;
+    margin-left: 1rem;
+    padding: 1rem 0 0.5rem;
+    font-weight: bold;
+    @include tablet {
+      font-size: 2.35rem;
+      margin-top: 1.5rem;
+    }
+    @include laptop {
+      margin-left: 10rem;
+    }
+  }
+  &__img-caption-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 1rem;
+    // font-weight: bold;
+    @include tablet {
+      margin: 1rem 1.25rem 0;
+      display: inline-block;
+    }
+    @include laptop {
+      // display: flex;
+      // align-items: center;
+    }
+  }
+  &__img-container {
+    margin: 1rem 1.75rem;
+    text-align: center;
+    // display: flex;
+    // justify-content: center;
+  }
+  &__img {
+    width: 100%;
+    height: 10rem;
+    @include tablet {
+      height: 25rem;
+    }
+    @include laptop {
+      width: 65%;
+      height: 30rem;
+    }
+  }
+  &__caption-container {
+    margin-top: 1rem;
+    font-weight: bold;
+    line-height: 1.4rem;
+    @include tablet {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      line-height: 2rem;
+      width: 40rem;
+    }
+    @include laptop {
+      margin-left: 17rem;
+      width: 50rem;
+    }
+  }
+  &__caption-author {
+    margin-top: 1rem;
+    font-weight: normal;
+    @include tablet {
+      margin-top: 2rem;
+      font-size: 1rem;
+    }
+    @include laptop {
+      margin-top: 1.5rem;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.biography {
+  margin-top: 1.5rem;
+  @include tablet {
+    margin-top: 2.25rem;
+  }
+  @include laptop {
+    margin-left: 17rem;
+  }
+  &__title {
+    font-size: 1.5rem;
+    font-weight: demi;
+  }
+  &__description-container {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    font-weight: medium;
+    @include tablet {
+      display: flex;
+    }
+    @include laptop {
+      width: 60rem;
+    }
+  }
+  &__description {
+    margin-top: 1rem;
+    @include tablet {
+      line-height: 1.5rem;
+      font-size: 1rem;
+    }
+  }
+}
+
+.photo {
+  margin-top: 3rem;
+  background-color: $photo-gallery-bg;
+  padding: 1.5rem 1rem;
+  @include tablet {
+    padding: 2.5rem 2rem;
+  }
+  @include laptop {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__title {
+    margin-bottom: 0.25rem;
+    @include tablet {
+      font-size: 2.5rem;
+    }
+    @include laptop {
+      align-self: flex-start;
+      margin-left: 11rem;
+    }
+  }
+  &__photos {
+    @include tablet {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+    @include laptop {
+      width: 75%;
+    }
+  }
+  &__img {
+    width: 100%;
+    padding: 0.375rem 0;
+    @include tablet {
+      width: 33.33%;
+      padding: 0.5rem 0.5rem;
+    }
+    @include laptop {
+    }
+  }
+}
+
+.footer {
+  background-color: $primary-color;
+  padding: 2rem 1rem;
+  @include tablet {
+    padding: 2.75rem 1.7rem;
+  }
+  @include laptop {
+    padding: 2.75rem 10rem;
+  }
+  &__main {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  &__header {
+    color: $secondary-color;
+    font-size: 2rem;
+  }
+  &__list {
+    margin-top: 1rem;
+    display: flex;
+    list-style-type: none;
+    @include tablet {
+      margin-right: 4rem;
+    }
+    @include laptop {
+      margin-right: 30rem;
+    }
+  }
+  &__item {
+    margin-left: 0.25rem;
+    margin-right: 2.25rem;
+  }
+  &__logo {
+    display: none;
+    @include tablet {
+      display: block;
+    }
+  }
+  &__contact-container {
+    @include tablet {
+      display: flex;
+    }
+  }
+  &__contact {
+    margin-top: 2rem;
+    color: $secondary-color;
+    @include laptop {
+      padding-right: 2rem;
+    }
+  }
+  &__contact-title {
+    margin-top: 1.25rem;
+    font-size: 1rem;
+    font-weight: medium;
+    width: 15rem;
+  }
+  &__contact-details {
+    margin-top: 1.25rem;
+    font-size: 0.75rem;
+    font-weight: thin;
+    @include tablet {
+      font-size: 0.85rem;
+    }
+  }
+  &__contact-email {
+    @extend .footer__contact-details;
+  }
+  &__copyright {
+    @extend .footer__contact-details;
+    color: $secondary-color;
+    margin-top: 2.5rem;
+    line-height: 1.15rem;
+    @include tablet {
+      width: 25rem;
+    }
+  }
+  &__copyright-br {
+    display: none;
+  }
+}
+
+.comments-title {
+  margin-top: 1.5rem;
+  margin-left: 1rem;
+}
+.form-img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 5rem;
+  display: inline-block;
+}
+.comments {
+  padding: 1.25rem 1rem;
+  margin-left: 3.75rem;
+  position: relative;
+  &__form-img {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    right: 16rem;
+    top: 2rem;
+  }
+  &__name-label {
+    color: $third-colour;
+    display: flex;
+    font-size: 0.8rem;
+  }
+  &__form-name {
+    margin-top: 0.3rem;
+    width: 14rem;
+    height: 2.75rem;
+    padding-left: 1rem;
+    border-radius: 6px;
+    font-family: 'Avenir Next';
+  }
+
+  &__comment-label {
+    display: flex;
+    color: $third-colour;
+    padding-top: 1rem;
+
+    font-size: 0.8rem;
+  }
+  &__form-comment-area {
+    border-radius: 5px;
+    padding-left: 1rem;
+    margin-top: 0.25rem;
+    padding-top: 1rem;
+    background-color: $photo-gallery-bg;
+    resize: none;
+    font-family: 'Avenir Next';
+  }
+  &__form-button {
+    background-color: $primary-color;
+    color: $secondary-color;
+    padding: 1rem 4.85rem;
+    border-radius: 5px;
+    border: none;
+    margin-top: 0.5rem;
+  }
+}
+
+.user-comments {
+  &__comment {
+    border-top: 1.5px solid $third-colour;
+    // display: flex;
+    // flex-wrap: wrap;
+    // justify-content: space-between;
+    // align-items: center;
+    padding: 1.25rem;
+    margin: 0 1rem;
+    position: relative;
+  }
+  &__author-img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    right: 15.5rem;
+    top: 2rem;
+  }
+  &__author {
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-left: 1.7rem;
+  }
+  &__date {
+    font-size: 0.9rem;
+    color: $third-colour;
+    display: inline-block;
+    padding-left: 0.5rem;
+  }
+  &__description {
+    padding-top: 1rem;
+    padding-left: 2rem;
+    font-size: 0.83rem;
+    line-height: 1.2rem;
+  }
+}
