@@ -1,0 +1,643 @@
+@import './partials/typography';
+@import './partials/variables';
+@import './partials/mixins';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Avenir Next';
+}
+
+.header {
+  &__nav {
+    background-color: $primary-color;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+    @include tablet {
+      flex-direction: row;
+      padding: 1.15rem 2rem;
+      align-items: center;
+    }
+  }
+  &__logo {
+    text-align: center;
+    margin-top: 1rem;
+    @include laptop {
+      margin-left: 7rem;
+    }
+  }
+  &__logo-img {
+    width: 8rem;
+  }
+  &__list {
+    list-style-type: none;
+    display: flex;
+    margin-top: 1rem;
+    justify-content: space-around;
+    @include tablet {
+      margin-left: 3rem;
+    }
+  }
+  &__item {
+    font-size: 1rem;
+  }
+  &__link {
+    color: $secondary-color;
+    text-decoration: none;
+    padding: 0 3.5rem 0.8rem;
+
+    @include tablet {
+      padding: 0 0.5rem 1.15rem;
+      margin: 0 1.5rem;
+    }
+  }
+  &__link--active {
+    border-bottom: 5.5px solid $secondary-color;
+  }
+}
+
+.hero {
+  height: 12rem;
+  width: 100%;
+  background-image: url('../Assets/Images/band-1.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  &.hero--shows {
+    background-image: url('../Assets/Images/henrik-donnestad-t2Sai-AqIpI-unsplash.jpg');
+    height: 28rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+
+    @include laptop {
+      flex-direction: row;
+      padding-top: 2rem;
+      padding-left: 13rem;
+    }
+  }
+  @include tablet {
+    height: 22rem;
+  }
+  @include laptop {
+    height: 37rem;
+  }
+  &__header {
+    color: $secondary-color;
+    font-size: 1rem;
+    margin-left: 1rem;
+    font-weight: 300;
+    margin-top: 2rem;
+    @include tablet {
+      font-size: 1.25rem;
+      font-weight: 300;
+      margin-left: 1.5rem;
+    }
+    @include laptop {
+      margin-left: 0;
+    }
+  }
+  &__title {
+    color: $secondary-color;
+    font-size: 1.5rem;
+    width: 14rem;
+    margin-left: 1rem;
+    &.title--shows {
+      font-size: 2.2rem;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      width: 18rem;
+      line-height: 3rem;
+      @include tablet {
+        font-size: 2.75rem;
+        width: 27rem;
+        line-height: 4rem;
+      }
+      @include laptop {
+        margin: 0;
+      }
+    }
+    @include tablet {
+      font-size: 3.2rem;
+      width: 30rem;
+      margin-left: 1.5rem;
+    }
+    @include laptop {
+      font-size: 3.5rem;
+      margin-bottom: 5rem;
+      margin-left: 8.5rem;
+    }
+  }
+  &__iframe-div {
+    text-align: center;
+    margin: 0 auto;
+    @include tablet {
+      margin-left: 1rem;
+    }
+    @include laptop {
+      margin-top: 8.5rem;
+      margin-left: 5rem;
+    }
+  }
+  &__iframe {
+    width: 97%;
+    height: 6.5rem;
+    border-radius: 5px;
+  }
+}
+
+.description {
+  &__title {
+    font-size: 1.5rem;
+    margin-top: 0.45rem;
+    margin-left: 0.5rem;
+    align-self: flex-start;
+    padding: 1rem 0 0.5rem;
+    font-weight: bold;
+    @include tablet {
+      font-size: 2.35rem;
+      margin-top: 1.5rem;
+      text-align: left;
+      align-self: flex-start;
+      margin-left: 2.25rem;
+    }
+    @include laptop {
+      margin-left: 10rem;
+    }
+  }
+  &__img-caption-container {
+    margin: 0 1rem;
+    @include tablet {
+      margin: 1rem 1.25rem 0;
+    }
+  }
+  &__container-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__img-container {
+    padding-top: 1rem;
+    width: 88vw;
+    text-align: center;
+  }
+  &__img {
+    width: 100%;
+    height: 10rem;
+    @include tablet {
+      height: 25rem;
+    }
+    @include laptop {
+      width: 70%;
+      height: 30rem;
+    }
+  }
+  &__caption-container {
+    margin-top: 1rem;
+    width: 18rem;
+    font-weight: bold;
+    line-height: 1.4rem;
+    @include tablet {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      line-height: 2rem;
+      width: 40rem;
+    }
+    @include laptop {
+      width: 50rem;
+      margin-right: 5rem;
+    }
+  }
+  &__caption-author {
+    margin-top: 1rem;
+    font-weight: normal;
+    @include tablet {
+      margin-top: 2rem;
+      font-size: 1rem;
+    }
+    @include laptop {
+      margin-top: 1.5rem;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.biography {
+  margin-top: 1.5rem;
+
+  @include tablet {
+    margin-top: 2.25rem;
+  }
+  @include laptop {
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+  }
+  &__title {
+    font-size: 1.5rem;
+    font-weight: demi;
+  }
+  &__description-container {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    font-weight: medium;
+    @include tablet {
+      display: flex;
+    }
+    @include laptop {
+      width: 60rem;
+    }
+  }
+  &__description {
+    margin-top: 1rem;
+    @include tablet {
+      line-height: 1.5rem;
+      font-size: 1rem;
+    }
+    @include laptop {
+      margin-right: 2rem;
+    }
+  }
+}
+
+.photo {
+  margin-top: 3rem;
+  background-color: $photo-gallery-bg;
+  padding: 1.5rem 1rem;
+  @include tablet {
+    padding: 2.5rem 2rem;
+  }
+  @include laptop {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__title {
+    margin-bottom: 0.25rem;
+    @include tablet {
+      font-size: 2.5rem;
+    }
+    @include laptop {
+      align-self: flex-start;
+      margin-left: 11rem;
+    }
+  }
+  &__photos {
+    @include tablet {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+    @include laptop {
+      width: 75%;
+    }
+  }
+  &__img {
+    width: 100%;
+    padding: 0.375rem 0;
+    @include tablet {
+      width: 33.33%;
+      padding: 0.5rem 0.5rem;
+    }
+    @include laptop {
+    }
+  }
+}
+
+.footer {
+  background-color: $primary-color;
+  padding: 2rem 1rem;
+  @include tablet {
+    padding: 2.75rem 1.7rem;
+  }
+  @include laptop {
+    padding: 2.75rem 10rem;
+  }
+  &__main {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  &__header {
+    color: $secondary-color;
+    font-size: 2rem;
+  }
+  &__list {
+    margin-top: 1rem;
+    display: flex;
+    list-style-type: none;
+    @include tablet {
+      margin-right: 4rem;
+    }
+    @include laptop {
+      margin-right: 30rem;
+    }
+  }
+  &__item {
+    margin-left: 0.25rem;
+    margin-right: 2.25rem;
+  }
+  &__logo {
+    display: none;
+    @include tablet {
+      display: block;
+    }
+  }
+  &__contact-container {
+    @include tablet {
+      display: flex;
+    }
+  }
+  &__contact {
+    margin-top: 2rem;
+    color: $secondary-color;
+    @include laptop {
+      padding-right: 2rem;
+    }
+  }
+  &__contact-title {
+    margin-top: 1.25rem;
+    font-size: 1rem;
+    font-weight: 300;
+    width: 15rem;
+  }
+  &__contact-details {
+    margin-top: 1.25rem;
+    font-size: 0.75rem;
+    font-weight: thin;
+    @include tablet {
+      font-size: 0.85rem;
+    }
+  }
+  &__contact-email {
+    @extend .footer__contact-details;
+  }
+  &__copyright {
+    @extend .footer__contact-details;
+    color: $secondary-color;
+    margin-top: 2.5rem;
+    line-height: 1.15rem;
+    @include tablet {
+      width: 25rem;
+    }
+  }
+  &__copyright-br {
+    display: none;
+  }
+}
+
+.comments {
+  padding: 1.25rem 0;
+  @include tablet {
+    height: 25rem;
+  }
+  &__addNew {
+    display: flex;
+    justify-content: center;
+  }
+  &__form {
+    display: flex;
+    @include laptop {
+      margin-top: 1rem;
+    }
+  }
+  &__title {
+    margin: 1rem 0;
+    padding-left: 1rem;
+    @include tablet {
+      font-size: 2.5rem;
+      margin-left: 0.5rem;
+    }
+    @include laptop {
+      margin-left: 10rem;
+    }
+  }
+  &__form-img-div {
+    padding-top: 1rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+  &__form-img {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+  }
+  &__form-input-div {
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &__name-label {
+    color: $third-colour;
+    display: flex;
+    font-size: 0.8rem;
+  }
+  &__form-name {
+    margin-top: 0.3rem;
+    width: 13rem;
+    height: 2.75rem;
+    padding: 1rem;
+    border-radius: 6px;
+    font-family: 'Avenir Next';
+    @include tablet {
+      width: 30rem;
+      height: 3rem;
+      font-size: 1rem;
+    }
+  }
+
+  &__comment-label {
+    display: flex;
+    color: $third-colour;
+    padding-top: 1rem;
+    font-size: 0.8rem;
+  }
+  &__form-comment-area {
+    border-radius: 5px;
+    padding: 1rem;
+    margin-top: 0.25rem;
+    width: 13rem;
+    height: 5rem;
+    background-color: $photo-gallery-bg;
+    resize: none;
+    font-family: 'Avenir Next';
+    @include tablet {
+      width: 30rem;
+      height: 7rem;
+      font-size: 1rem;
+    }
+  }
+  &__form-button-div {
+    width: 13rem;
+    @include tablet {
+      align-self: flex-end;
+      text-align: right;
+    }
+  }
+  &__form-button {
+    background-color: $primary-color;
+    color: $secondary-color;
+    padding: 1rem;
+    border-radius: 5px;
+    border: none;
+    margin-top: 0.5rem;
+    width: 100%;
+    @include tablet {
+      padding: 1rem;
+      width: 10rem;
+    }
+  }
+  &__info-div {
+    margin-right: 2rem;
+    width: fit-content;
+  }
+}
+
+.user-comments {
+  padding: 1rem;
+  @include tablet {
+    padding: 1rem 7rem;
+  }
+  @include laptop {
+    padding: 1rem 27rem;
+  }
+  &__comment {
+    border-top: 1.5px solid $third-colour;
+    padding: 1.25rem 0.5rem 1.25rem;
+    display: flex;
+  }
+  &__img-div {
+    padding-right: 1rem;
+  }
+  &__author-img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    @include tablet {
+      width: 3.5rem;
+      height: 3.5rem;
+    }
+  }
+  &__text-div {
+    width: 100%;
+  }
+  &__name-div {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__author {
+    font-size: 0.9rem;
+    @include tablet {
+      font-size: 1rem;
+    }
+    @include laptop {
+      font-size: 1.1rem;
+    }
+  }
+  &__date {
+    font-size: 0.8rem;
+    color: $third-colour;
+    @include tablet {
+      font-size: 0.9rem;
+    }
+    @include laptop {
+      font-size: 1rem;
+    }
+  }
+  &__description {
+    padding-top: 1rem;
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+    @include tablet {
+      font-size: 0.9rem;
+      line-height: 1.25rem;
+    }
+    @include laptop {
+      font-size: 1rem;
+    }
+  }
+}
+
+.shows {
+  padding: 2rem 1rem;
+  @include tablet {
+    padding: 0 2rem;
+  }
+  @include laptop {
+    padding: 0 20rem;
+  }
+  &__title {
+    @include tablet {
+      margin-top: 2rem;
+    }
+    @include laptop {
+      // position: absolute;
+      // left: 10rem;
+    }
+  }
+  &__card {
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid $fourth-colour;
+    padding-bottom: 1rem;
+  }
+  &__div {
+    margin: 0.65rem 0;
+    font-size: 0.75rem;
+  }
+  &__subtitle {
+    font-size: 0.75rem;
+    font-weight: 300;
+    color: $third-colour;
+    margin-bottom: 0.5rem;
+    @include tablet {
+      margin-bottom: 2rem;
+    }
+  }
+  &__content {
+    font-weight: 300;
+    font-size: 0.85rem;
+  }
+  &__date {
+    font-weight: 600;
+  }
+  &__button {
+    text-align: center;
+    padding: 0.8rem 0;
+    margin-top: 1rem;
+    color: $secondary-color;
+    background-color: $primary-color;
+    font-size: 0.85rem;
+    font-weight: 300;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    @include tablet {
+      padding: 1rem 2rem;
+    }
+  }
+  & article:not(:nth-child(2)) .shows__div .shows__subtitle {
+    @include tablet {
+      display: none;
+    }
+  }
+  &__card {
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}

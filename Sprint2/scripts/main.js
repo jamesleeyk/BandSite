@@ -21,42 +21,60 @@ const comments = [
 
 const form = document.querySelector('.comments__form');
 
-const displayComment = (comment) => {
-  const userComments = document.querySelector('user-comments');
-  const commentArticle = document.createElement('article');
-  commentArticle.classList.add('user-comments__comment');
-  const userPicture = document.createElement('img');
-  userPicture.classList.add('user-comments__author-img');
-  userPicture.setAttribute('src', './Assets/Images/Mohan-muruge.jpg');
-  const name = document.createElement('h3');
-  name.classList.add('user-comments__author');
-  name.innerText(comment.userName);
-  const date = document.createElement('p');
-  date.classList.add('user-comments__date');
-  date.innerText(comment.timeStamp);
-  const comment = document.createElement('p');
-  comment.classList.add('user-comments__description');
-  comment.innerText(user.newComment);
+const displayComment = (commentArr) => {
+  const userComments = document.querySelector('.user-comments');
+  userComments.innerHTML = '';
+  for (let commentObj of commentArr) {
+    // select user comments section
+    // create elements and add attributes accordingly
+    const commentArticle = document.createElement('article');
+    commentArticle.classList.add('user-comments__comment');
 
-  commentArticle.appendChild(userPicture);
-  commentArticle.appendChild(name);
-  commentArticle.appendChild(date);
-  commentArticle.appendChild(comment);
+    const imgDiv = document.createElement('div');
+    imgDiv.classList.add('user-comments__img-div');
 
-  userComments.appendChild(commentArticle);
-};
+    const userPicture = document.createElement('img');
+    userPicture.classList.add('user-comments__author-img');
+    userPicture.setAttribute('src', './Assets/Images/Mohan-muruge.jpg');
+    imgDiv.appendChild(userPicture);
 
-const renderComment = (commentsArray) => {
-  for (let comment of commentsArray) {
-    displayComment(comment);
+    const textDiv = document.createElement('div');
+    textDiv.classList.add('user-comments__text-div');
+
+    const nameDiv = document.createElement('div');
+    nameDiv.classList.add('user-comments__name-div');
+
+    const name = document.createElement('h3');
+    name.classList.add('user-comments__author');
+    name.innerText = commentObj.userName;
+    nameDiv.appendChild(name);
+
+    const date = document.createElement('p');
+    date.classList.add('user-comments__date');
+    date.innerText = commentObj.timeStamp;
+    nameDiv.appendChild(date);
+
+    const commentDiv = document.createElement('div');
+    commentDiv.classList.add('user-comments__description-div');
+
+    const comment = document.createElement('p');
+    comment.classList.add('user-comments__description');
+    comment.innerText = commentObj.newComment;
+    commentDiv.appendChild(comment);
+
+    textDiv.appendChild(nameDiv);
+    textDiv.appendChild(commentDiv);
+
+    commentArticle.appendChild(imgDiv);
+    commentArticle.appendChild(textDiv);
+
+    userComments.appendChild(commentArticle);
   }
 };
 
-renderComment(comments);
-
 form.addEventListener('submit', (event) => {
   event.preventDefault();
-  form.reset();
+  console.log(event);
   const userName = event.target.userName.value;
   const newComment = event.target.newComment.value;
   const timeStamp = '01/31/2021';
@@ -67,5 +85,8 @@ form.addEventListener('submit', (event) => {
     timeStamp,
   };
   comments.push(commentObj);
-  renderComment(comments);
+  displayComment(comments);
+  form.reset();
 });
+
+displayComment(comments);

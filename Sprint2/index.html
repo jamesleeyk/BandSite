@@ -17,10 +17,13 @@
         /></a>
         <ul class="header__list">
           <li class="header__item">
-            <a href="./" class="header__link header__link--active">Biography</a>
+            <a href="./index.html" class="header__link header__link--active"
+              >Biography</a
+            >
           </li>
-
-          <li class="header__item"><a href="./" class="header__link">Shows</a></li>
+          <li class="header__item">
+            <a href="./pages/shows.html" class="header__link">Shows</a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -31,21 +34,23 @@
       </section>
 
       <section class="description">
-        <h2 class="description__title">About the Musicians</h2>
         <div class="description__img-caption-container">
-          <div class="description__img-container">
-            <img
-              class="description__img"
-              src="Assets/Images/glenn-van-de-wiel-DWHSc8o8K9Y-unsplash.jpg"
-              alt="band image"
-            />
-          </div>
-          <div class="description__caption-container">
-            <p class="description__caption">
-              “We are more comfortable with not fighting what comes naturally. Before
-              we might have thought, ‘We need to be smarter than this’”
-            </p>
-            <p class="description__caption-author">- Xavier de Rosnay</p>
+          <div class="description__container-div">
+            <h2 class="description__title">About the Musicians</h2>
+            <div class="description__img-container">
+              <img
+                class="description__img"
+                src="Assets/Images/glenn-van-de-wiel-DWHSc8o8K9Y-unsplash.jpg"
+                alt="band image"
+              />
+            </div>
+            <div class="description__caption-container">
+              <p class="description__caption">
+                “We are more comfortable with not fighting what comes naturally.
+                Before we might have thought, ‘We need to be smarter than this’”
+              </p>
+              <p class="description__caption-author">- Xavier de Rosnay</p>
+            </div>
           </div>
           <div class="biography">
             <h2 class="biography__title">Xavier de Rosnay & Gaspard Augé</h2>
@@ -93,83 +98,53 @@
       </section>
     </main>
 
-    <h2 class="comments-title">Join the Conversation</h2>
-
     <section class="comments">
+      <h2 class="comments__title">Join the Conversation</h2>
       <div class="comments__addNew">
-        <form action="#" class="comments__form">
-          <img
-            src="./Assets/Images/houcine-ncib-B4TjXnI0Y2c-unsplash.jpg"
-            alt="profile picture"
-            class="comments__form-img"
-          />
-          <label class="comments__name-label" for="user-name">NAME</label>
-          <input
-            id="user-name"
-            type="text"
-            name="userName"
-            class="comments__form-name"
-            placeholder="Enter your name"
-            autocomplete="off"
-          />
-          <label class="comments__comment-label" for="new-comment">COMMENT</label>
-          <textarea
-            name="newComment"
-            id="new-comment"
-            cols="30"
-            rows="5"
-            placeholder="Add a new comment"
-            class="comments__form-comment-area"
-          ></textarea>
-          <button class="comments__form-button">COMMENT</button>
+        <form name="commentForm" action="#" class="comments__form">
+          <div class="comments__form-img-div">
+            <img
+              src="./Assets/Images/houcine-ncib-B4TjXnI0Y2c-unsplash.jpg"
+              alt="profile picture"
+              class="comments__form-img"
+            />
+          </div>
+          <div class="comments__info-div">
+            <div class="comments__form-input-div">
+              <div class="comments_form-name-div">
+                <label class="comments__name-label" for="user-name">NAME</label>
+                <input
+                  id="user-name"
+                  type="text"
+                  name="userName"
+                  class="comments__form-name"
+                  placeholder="Enter your name"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="comments__form-comment-div">
+                <label class="comments__comment-label" for="new-comment"
+                  >COMMENT</label
+                >
+                <textarea
+                  name="newComment"
+                  id="new-comment"
+                  cols="29"
+                  rows="5"
+                  placeholder="Add a new comment"
+                  class="comments__form-comment-area"
+                ></textarea>
+              </div>
+              <div class="comments__form-button-div">
+                <button class="comments__form-button">COMMENT</button>
+              </div>
+            </div>
+          </div>
         </form>
       </div>
     </section>
 
-    <section class="user-comments">
-      <article class="user-comments__comment">
-        <img
-          src="./Assets/Images/Mohan-muruge.jpg"
-          alt="author picture"
-          class="user-comments__author-img"
-        />
-        <h3 class="user-comments__author">Micheal Lyons</h3>
-        <p class="user-comments__date">12/18/2018</p>
-        <p class="user-comments__description">
-          They BLEW the ROOF off at their last show, once everyone started figuring
-          out they were going. This is still simply the greatest opening of a concert
-          I have EVER witnessed.
-        </p>
-      </article>
-      <article class="user-comments__comment">
-        <img
-          src="./Assets/Images/houcine-ncib-B4TjXnI0Y2c-unsplash.jpg"
-          alt="author picture"
-          class="user-comments__author-img"
-        />
-        <h3 class="user-comments__author">Gary Wong</h3>
-        <p class="user-comments__date">12/12/2018</p>
-        <p class="user-comments__description">
-          Every time I see him shred I feel so motivated to get off my couch and hop
-          on my board. He’s so talented! I wish I can ride like him one day so I can
-          really enjoy myself!
-        </p>
-      </article>
-      <article class="user-comments__comment">
-        <img
-          src="./Assets/Images/Mohan-muruge.jpg"
-          alt="author picture"
-          class="user-comments__author-img"
-        />
-        <h3 class="user-comments__author">Theodore Duncan</h3>
-        <p class="user-comments__date">11/15/2018</p>
-        <p class="user-comments__description">
-          How can someone be so good!!! You can tell he lives for this and loves to
-          do it every day. Everytime I see him I feel instantly happy! He’s
-          definitely my favorite ever!
-        </p>
-      </article>
-    </section>
+    <section class="user-comments"></section>
 
     <footer class="footer">
       <div class="footer__main">
